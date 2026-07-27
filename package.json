@@ -1,0 +1,59 @@
+{
+  "name": "angular-fe",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "packageManager": "npm@11.16.0",
+  "allowScripts": {
+    "less": true,
+    "@parcel/watcher": true,
+    "esbuild": true,
+    "lmdb": true,
+    "msgpackr-extract": true,
+    "nx": true
+  },
+  "dependencies": {
+    "@angular/animations": "^22.0.0",
+    "@angular/cdk": "^22.0.0",
+    "@angular/common": "^22.0.0",
+    "@angular/compiler": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/forms": "^22.0.0",
+    "@angular/material": "^22.0.0",
+    "@angular/platform-browser": "^22.0.0",
+    "@angular/router": "^22.0.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "crypto-js": "^4.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "overrides": {
+    "axios": "^1.9.0",
+    "brace-expansion": "^5.0.8",
+    "@hono/node-server": "^2.0.5"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.0.8",
+    "@angular/cli": "^22.0.8",
+    "@angular/compiler-cli": "^22.0.0",
+    "@eslint/js": "^10.0.1",
+    "@types/crypto-js": "^4.2.2",
+    "@vitest/coverage-v8": "^4.1.10",
+    "angular-eslint": "22.1.0",
+    "eslint": "^10.6.0",
+    "fast-check": "^4.9.0",
+    "prettier": "^3.8.1",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "8.62.1",
+    "vitest": "^4.1.10"
+  }
+}

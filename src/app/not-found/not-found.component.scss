@@ -1,0 +1,15 @@
+.not-found-container {
+  @apply min-h-screen flex flex-col items-center justify-center bg-gray-50;
+}
+
+.not-found-title {
+  @apply text-6xl font-bold text-gray-800;
+}
+
+.not-found-message {
+  @apply mt-4 text-lg text-gray-600;
+}
+
+.not-found-link {
+  @apply mt-6;
+}

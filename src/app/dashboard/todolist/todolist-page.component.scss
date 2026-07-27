@@ -1,0 +1,105 @@
+.todolist-page {
+  width: 100%;
+}
+
+.page-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 16px;
+}
+
+.todo-form-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.todo-table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+::ng-deep .todo-table .mat-mdc-header-row {
+  background: #dc2626;
+}
+
+::ng-deep .todo-table .mat-mdc-header-cell {
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.completed-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.empty-message {
+  text-align: center;
+  color: #6b7280;
+  padding: 32px 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.delete-modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.delete-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.delete-modal-body {
+  padding: 20px;
+
+  p {
+    margin: 0;
+    color: #4b5563;
+  }
+}
+
+.delete-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-delete {
+  background-color: #dc2626 !important;
+  color: white !important;
+}

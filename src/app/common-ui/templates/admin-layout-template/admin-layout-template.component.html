@@ -1,0 +1,26 @@
+<div class="admin-layout">
+  <app-sidebar-organism
+    [brandName]="brandName()"
+    [brandIcon]="brandIcon()"
+    [menuItems]="menuItems()"
+  />
+
+  <div class="main-area">
+    <app-top-header-organism
+      [title]="pageTitle()"
+      [userInitials]="userInitials()"
+      (onLogout)="onLogout.emit()"
+      (onProfile)="onProfile.emit()"
+    />
+
+    <main class="content-area">
+      <div class="content-card">
+        <router-outlet />
+      </div>
+    </main>
+
+    <footer class="admin-footer">
+      <span>© 2025 Angular FE Starter. All rights reserved.</span>
+    </footer>
+  </div>
+</div>

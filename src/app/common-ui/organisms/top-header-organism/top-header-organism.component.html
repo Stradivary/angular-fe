@@ -1,0 +1,21 @@
+<header class="top-header">
+  <div class="header-left">
+    <span class="page-title">{{ title() }}</span>
+  </div>
+  <div class="header-right">
+    <mat-icon class="notification-icon">notifications</mat-icon>
+    <div class="user-avatar" [matMenuTriggerFor]="userMenu">
+      {{ userInitials() }}
+    </div>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item (click)="onProfile.emit()">
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="onLogout.emit()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</header>

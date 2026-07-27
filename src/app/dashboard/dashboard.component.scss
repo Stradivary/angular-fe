@@ -1,0 +1,31 @@
+.dashboard-wrapper {
+  @apply min-h-screen bg-gray-50;
+}
+
+.toolbar-title {
+  @apply flex-1;
+}
+
+.dashboard-main {
+  @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+.dashboard-title {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.todo-form-wrapper {
+  @apply mt-4;
+}
+
+.todo-list {
+  @apply mt-6 space-y-2;
+}
+
+.loading-container {
+  @apply flex justify-center py-8;
+}
+
+.empty-message {
+  @apply text-center text-gray-500 py-8;
+}

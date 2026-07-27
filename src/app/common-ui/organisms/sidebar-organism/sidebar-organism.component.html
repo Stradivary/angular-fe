@@ -1,0 +1,17 @@
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <mat-icon>{{ brandIcon() }}</mat-icon>
+    <span>{{ brandName() }}</span>
+  </div>
+  <nav class="sidebar-nav">
+    @for (item of menuItems(); track item.route) {
+      <a [routerLink]="item.route"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: item.exact ?? false}"
+         class="nav-item">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+</aside>

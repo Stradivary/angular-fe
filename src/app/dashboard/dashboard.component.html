@@ -1,0 +1,48 @@
+<div class="dashboard-wrapper">
+  <!-- Navbar -->
+  <mat-toolbar color="primary">
+    <span class="toolbar-title">{{ userName() }}</span>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </mat-toolbar>
+
+  <!-- Main content -->
+  <main class="dashboard-main">
+    <h1 class="dashboard-title">Daftar Tugas</h1>
+
+    <!-- Todo form -->
+    <div class="todo-form-wrapper">
+      <app-todo-form-molecule (onSubmit)="addTodo($event)" />
+    </div>
+
+    <!-- Todo list -->
+    <div class="todo-list">
+      @if (isLoading()) {
+        <div class="loading-container">
+          <mat-spinner diameter="40"></mat-spinner>
+        </div>
+      } @else if (todos().length === 0) {
+        <p class="empty-message">Belum ada tugas</p>
+      } @else {
+        @for (todo of todos(); track todo.id) {
+          <app-todo-item-molecule
+            [todo]="todo"
+            (onToggle)="toggleTodo($event)"
+            (onDelete)="confirmDelete($event)"
+          />
+        }
+      }
+    </div>
+  </main>
+
+  <!-- Delete confirmation modal -->
+  <app-modal-confirm-organism
+    title="Hapus Tugas"
+    message="Apakah Anda yakin ingin menghapus tugas ini?"
+    [visible]="showDeleteModal()"
+    (onConfirm)="deleteTodo()"
+    (onCancel)="cancelDelete()"
+  />
+</div>

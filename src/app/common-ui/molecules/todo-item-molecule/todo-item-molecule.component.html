@@ -1,0 +1,16 @@
+<div class="todo-item">
+  <mat-checkbox
+    [checked]="todo().completed"
+    (change)="onToggle.emit(todo().id)"
+  ></mat-checkbox>
+  <span
+    class="todo-item-title"
+    [class.line-through]="todo().completed"
+    [class.text-gray-400]="todo().completed"
+  >
+    {{ todo().title }}
+  </span>
+  <button mat-icon-button color="warn" (click)="onDelete.emit(todo().id)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

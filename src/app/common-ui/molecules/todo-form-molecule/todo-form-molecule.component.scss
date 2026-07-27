@@ -1,0 +1,36 @@
+.todo-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.todo-input {
+  width: 220px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #dc2626;
+  }
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+}
+
+.todo-btn {
+  height: 36px;
+  background-color: #dc2626 !important;
+  color: white !important;
+  border-radius: 6px;
+  font-size: 0.875rem;
+
+  &:disabled {
+    background-color: #fca5a5 !important;
+  }
+}

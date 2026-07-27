@@ -1,0 +1,15 @@
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+}
+
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/50;
+}
+
+.modal-card {
+  @apply relative max-w-md w-full mx-4;
+}
+
+.modal-message {
+  @apply mt-2 text-gray-600;
+}

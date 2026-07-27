@@ -1,0 +1,36 @@
+<app-admin-layout-template
+  brandName="Angular FE"
+  brandIcon="code"
+  [menuItems]="menuItems"
+  pageTitle="Admin Dashboard"
+  [userInitials]="userInitials()"
+  (onLogout)="logout()"
+  (onProfile)="openProfile()"
+/>
+
+<!-- Profile Modal -->
+@if (showProfileModal()) {
+  <div class="modal-overlay" (click)="closeProfile()">
+    <div class="profile-modal" (click)="$event.stopPropagation()">
+      <div class="profile-modal-header">
+        <h3>Detail User</h3>
+        <button mat-icon-button (click)="closeProfile()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="profile-modal-body">
+        <div class="profile-avatar-large">{{ userInitials() }}</div>
+        <div class="profile-info">
+          <div class="profile-field">
+            <span class="field-label">Email</span>
+            <span class="field-value">{{ userName() }}</span>
+          </div>
+          <div class="profile-field">
+            <span class="field-label">Role</span>
+            <span class="field-value">Admin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}

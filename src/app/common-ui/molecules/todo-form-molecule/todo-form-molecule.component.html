@@ -1,0 +1,19 @@
+<form (submit)="handleSubmit($event)" class="todo-form">
+  <input
+    type="text"
+    class="todo-input"
+    placeholder="Tambahkan tugas baru..."
+    [value]="title()"
+    (input)="onInput($event)"
+    maxlength="200"
+  />
+  <button
+    mat-flat-button
+    type="button"
+    class="todo-btn"
+    [disabled]="!title().trim()"
+    (click)="submitForm()"
+  >
+    Tambah
+  </button>
+</form>

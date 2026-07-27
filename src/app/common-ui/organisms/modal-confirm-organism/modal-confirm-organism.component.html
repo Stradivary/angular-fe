@@ -1,0 +1,17 @@
+@if (visible()) {
+  <div class="modal-overlay">
+    <div class="modal-backdrop" (click)="onCancel.emit()"></div>
+    <mat-card class="modal-card">
+      <mat-card-header>
+        <mat-card-title>{{ title() }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="modal-message">{{ message() }}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button (click)="onCancel.emit()">Batal</button>
+        <button mat-flat-button color="warn" (click)="onConfirm.emit()">Konfirmasi</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+}

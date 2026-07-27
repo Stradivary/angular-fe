@@ -1,0 +1,14 @@
+@if (showHeader()) {
+  <mat-toolbar class="header">
+    <div class="header-content">
+      <span class="brand">Angular FE Starter</span>
+      <nav class="nav-links">
+        <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a mat-flat-button color="primary" routerLink="/login" routerLinkActive="active-link">Login</a>
+      </nav>
+    </div>
+  </mat-toolbar>
+}
+
+<!-- Content -->
+<router-outlet />

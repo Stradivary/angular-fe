@@ -1,0 +1,77 @@
+<div class="todolist-page">
+  <h1 class="page-heading">Daftar Tugas</h1>
+
+  <div class="todo-form-wrapper">
+    <app-todo-form-molecule (onSubmit)="addTodo($event)" />
+  </div>
+
+  <!-- Table -->
+  @if (isLoading()) {
+    <div class="loading-container">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+  } @else if (todos().length === 0) {
+    <p class="empty-message">Belum ada tugas</p>
+  } @else {
+    <table mat-table [dataSource]="todos()" class="todo-table">
+      <!-- No Column -->
+      <ng-container matColumnDef="no">
+        <th mat-header-cell *matHeaderCellDef>No</th>
+        <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element" [class.completed-text]="element.completed">
+          {{ element.title }}
+        </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox
+            [checked]="element.completed"
+            (change)="toggleTodo(element.id)"
+          ></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="confirmDelete(element.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  }
+
+  <!-- Delete confirmation modal -->
+  @if (showDeleteModal()) {
+    <div class="modal-overlay" (click)="cancelDelete()" (keydown.escape)="cancelDelete()" role="dialog" aria-modal="true">
+      <div class="delete-modal" (click)="$event.stopPropagation()">
+        <div class="delete-modal-header">
+          <h3>Hapus Tugas</h3>
+          <button mat-icon-button (click)="cancelDelete()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+        <div class="delete-modal-body">
+          <p>Apakah Anda yakin ingin menghapus tugas ini?</p>
+        </div>
+        <div class="delete-modal-footer">
+          <button mat-button (click)="cancelDelete()">Batal</button>
+          <button mat-flat-button class="btn-delete" (click)="deleteTodo()">Hapus</button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-area {
+  margin-left: 220px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex: 1;
+  padding: 24px;
+  background: #f3f4f6;
+}
+
+.content-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 180px);
+  padding: 24px;
+}
+
+.admin-footer {
+  padding: 12px 24px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
