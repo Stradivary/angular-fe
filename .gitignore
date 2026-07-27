@@ -29,16 +29,28 @@ yarn-error.log
 !.vscode/mcp.json
 .history/*
 
-# Miscellaneous
+# Angular
 /.angular/cache
+
+# Testing & Coverage
+/coverage
+testem.log
+__screenshots__/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Miscellaneous
 .sass-cache/
 /connect.lock
-/coverage
 /libpeerconnection.log
-testem.log
 /typings
-__screenshots__/
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Kiro
+.kiro/
