@@ -138,8 +138,9 @@ Mock interceptor mensimulasikan endpoint:
 | `npm start` | Development server (port 4200) |
 | `npm run build` | Production build |
 | `npm run lint` | ESLint check |
-| `npm test` | Run tests via Angular CLI |
-| `npx vitest run` | Run unit tests via Vitest |
+| `npm test` | Run unit tests (single run) |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run test:coverage` | Run tests with coverage report |
 
 ## Environment Variables
 
